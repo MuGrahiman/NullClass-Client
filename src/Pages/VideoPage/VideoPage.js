@@ -14,7 +14,7 @@ const VideoPage = () => {
   const currentUser = useSelector((state) => state?.currentUserReducer);
   const vids = useSelector((state) => state.videoReducer);
   const vv = vids?.data?.filter((q) => q._id === vid)[0];
-  console.log(vv)
+  console.log(vv);
   // const chanels = useSelector((state) => state?.channelReducers);
   // const currentchanels = chanels?.filter((c) => c._id === vid)[0];
   const handleHistory = () => {
@@ -36,8 +36,7 @@ const VideoPage = () => {
         <div className="container2_videoPage">
           <div className="video_display_screen_videoPage">
             <video
-              src={`http://localhost:5500/${vv?.filePath}`}
-              //   autoPlay
+              src={`https://youtube-clone-mug-de178feea9da.herokuapp.com/${vv?.filePath}`}
               controls
               className="video_ShowVideo_videoPage"
             ></video>
