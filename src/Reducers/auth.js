@@ -8,7 +8,6 @@ const authReducers = (state = { data: null }, action) => {
         })
       );
       return { ...state, data: action?.data };
-    // break;npm
 
     default:
       return state;

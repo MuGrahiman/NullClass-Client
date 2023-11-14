@@ -3,7 +3,6 @@ import * as api from "../API";
 export const fetchAllChanel = () => async (dispatch) => {
   try {
     const { data } = await api.fetchAllChanel();
-    console.log(data)
     dispatch({ type: "FETCH_CHANELS", payload: data });
   } catch (error) {
     console.log(error);

@@ -5,12 +5,11 @@ import SearchBar from "../SearchBar/SearchBar";
 import { RiVideoAddLine } from "react-icons/ri";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { BiUserCircle } from "react-icons/bi";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import GoogleLogin from "react-google-login";
 import { gapi } from "gapi-script";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../Actions/auth";
-import { currentUserReducer } from "../../Reducers/currentUser";
 import Auth from "../../Pages/Auth/Auth";
 
 function Navbar({ toggleDrawer, setCreateEditChannelBtn }) {

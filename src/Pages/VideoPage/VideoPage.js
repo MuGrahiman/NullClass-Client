@@ -14,10 +14,7 @@ const VideoPage = () => {
   const currentUser = useSelector((state) => state?.currentUserReducer);
   const vids = useSelector((state) => state.videoReducer);
   const vv = vids?.data?.filter((q) => q._id === vid)[0];
-  console.log(vv);
-  // const chanels = useSelector((state) => state?.channelReducers);
-  // const currentchanels = chanels?.filter((c) => c._id === vid)[0];
-  const handleHistory = () => {
+   const handleHistory = () => {
     dispatch(addToHistory({ videoId: vid, Viewer: currentUser?.result?._id }));
   };
   const handleViews = () => {

@@ -4,12 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../Actions/auth";
 import { updateChanelData } from "../../Actions/channelUser";
 const CreateEditChannel = ({ setCreateEditChannelBtn }) => {
-  // const CurrentUser = {
-  //   result: {
-  //     email: "asdf@gmail.com",
-  //     joinedOn: "2222-07-15T09:57:23.489z",
-  //   },
-  // };
+
   const CurrentUser = useSelector((state) => state.currentUserReducer);
   const dispatch = useDispatch();
   const [name, setname] = useState(CurrentUser?.result?.name);
@@ -25,7 +20,6 @@ const CreateEditChannel = ({ setCreateEditChannelBtn }) => {
         let Email = CurrentUser?.result.email;
         console.log(Email);
         dispatch(login({ email: Email }));
-    // dispatch(login({ email: CurrentUser?.result.email }));
       }, 5000);
     }
   };

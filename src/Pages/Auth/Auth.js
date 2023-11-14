@@ -14,9 +14,6 @@ const Auth = ({ User, setAuthBtn, setCreateEditChannelBtn }) => {
     alert("successfully logout");
   };
 
-  const onFailure = (res) => {
-    console.log("Failed", res);
-  };
   return (
     <div className="Auth_Container" onClick={() => setAuthBtn(false)}>
       <div className="Auth_Container2">

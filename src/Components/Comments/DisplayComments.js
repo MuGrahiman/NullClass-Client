@@ -11,7 +11,6 @@ const DisplayComments = ({
   commentOn,
   userCommented,
 }) => {
-  // console.log(cId,'cId', commentBody,'commentBody', userId,'userId', commentOn,'commentOn', userCommented,'userCommented');
 
   const currentUser = useSelector((state) => state?.currentUserReducer);
   const [commentBdy, setCommentBdy] = useState("");
@@ -31,8 +30,7 @@ const DisplayComments = ({
         editComment({
           id: commentId,
           commentBody: commentBdy,
-          // userId: currentUser?.result?._id,
-          // userCommented: currentUser?.result?.name,
+         
         })
       );
       setCommentBdy("");

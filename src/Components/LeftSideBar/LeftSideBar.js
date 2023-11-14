@@ -26,7 +26,6 @@ function LeftSideBar() {
           width={22}
           alt="shorts"
           className="icon_sideBar"
-          // style={{ margin: "auto 0.7rem" }}
         />{" "}
         <div className="text_sideBar_icon" style={{ fontSize: "10px" }}>
           Shorts

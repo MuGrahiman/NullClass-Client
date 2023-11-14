@@ -11,7 +11,7 @@ const SearchList = ({ TitleArray, setSearchQuery, setSearchList }) => {
             className="titleItem"
             onClick={() => {
               setSearchQuery(m);
-            //   setSearchList(false);
+              setSearchList(false);
             }}
           >
             <FaSearch />
