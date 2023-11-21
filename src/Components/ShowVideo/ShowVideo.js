@@ -2,8 +2,7 @@ import React from "react";
 import "./ShowVideo.css";
 import { Link } from "react-router-dom";
 import moment from "moment";
-import { HiDotsVertical } from "react-icons/hi";
-
+import { IoMdClose } from "react-icons/io";
 function ShowVideo({ Remover, vid ,CurrentUser}) {
   // const currentUser = useSelector((state) => state?.currentUserReducer);
 
@@ -11,7 +10,7 @@ function ShowVideo({ Remover, vid ,CurrentUser}) {
     <>
       {Remover && (
         <div className="video_dot">
-          <HiDotsVertical onClick={() => Remover(vid._id,CurrentUser)} />
+          <IoMdClose  onClick={() => Remover(vid._id,CurrentUser)} />
         </div>
       )}
 
