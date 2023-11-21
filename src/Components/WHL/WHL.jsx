@@ -4,7 +4,7 @@ import "./WHL.css";
 import WHLVideoList from "../../Components/WHL/WHLVideoList";
 import { useDispatch, useSelector } from "react-redux";
 import { clearHistory } from "../../Actions/history";
-const WHL = ({ Page, VideoList }) => {
+const WHL = ({ Page, VideoList,Remover }) => {
   const dispatch = useDispatch();
   const CurrentUser = useSelector((state) => state?.currentUserReducer);
   const handleClearHistory = ()=>{
@@ -24,6 +24,7 @@ const WHL = ({ Page, VideoList }) => {
             <h1>{Page}</h1>
             <div className="whl_list">
               <WHLVideoList
+              Remover={Remover}
                 CurrentUser={CurrentUser?.result?._id}
                 Page={Page}
                 VideoList={VideoList}

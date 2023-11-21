@@ -17,8 +17,19 @@ export const getAllHistory = () => async (dispatch) => {
     } catch (error) {
       console.log(error);
     }
-  };
+  }; 
   
+  export const deleteHistory = (HistoryData) => async (dispatch) => {
+    const {videoId, Viewer} = HistoryData
+    console.log(videoId, Viewer)
+    try {
+       await api.deleteHistory(videoId, Viewer);
+      dispatch(getAllHistory());
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   export const clearHistory = (HistoryData) => async (dispatch) => {
     const {userId} = HistoryData
     console.log(userId)

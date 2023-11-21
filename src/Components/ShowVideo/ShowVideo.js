@@ -2,9 +2,19 @@ import React from "react";
 import "./ShowVideo.css";
 import { Link } from "react-router-dom";
 import moment from "moment";
-function ShowVideo({ vid }) {
+import { HiDotsVertical } from "react-icons/hi";
+
+function ShowVideo({ Remover, vid ,CurrentUser}) {
+  // const currentUser = useSelector((state) => state?.currentUserReducer);
+
   return (
     <>
+      {Remover && (
+        <div className="video_dot">
+          <HiDotsVertical onClick={() => Remover(vid._id,CurrentUser)} />
+        </div>
+      )}
+
       <Link to={`/videopage/${vid._id}`}>
         <video
           src={`https://youtube-clone-mug-de178feea9da.herokuapp.com/${vid?.filePath}`}

@@ -2,7 +2,7 @@ import React from "react";
 import ShowVideo from "../ShowVideo/ShowVideo";
 import { useSelector } from "react-redux";
 
-const ShowVideoList = ({ videoId }) => {
+const ShowVideoList = ({ videoId ,Remover,CurrentUser}) => {
   const vids = useSelector((state) => state.videoReducer); 
   return (
     <div className="Container_ShowvideoGrid">
@@ -11,7 +11,7 @@ const ShowVideoList = ({ videoId }) => {
         .map((vi) => {
           return (
             <div key={vi._id} className="video_box_app">
-              <ShowVideo vid={vi} />
+              <ShowVideo CurrentUser={CurrentUser} Remover={Remover} vid={vi} />
             </div>
           );
         })}

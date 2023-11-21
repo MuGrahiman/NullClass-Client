@@ -1,7 +1,7 @@
 import React from "react";
 import ShowVideoList from "../../Components/ShowVideoList/ShowVideoList";
 
-const WHLVideoList = ({ Page, CurrentUser, VideoList }) => {
+const WHLVideoList = ({ Page,Remover, CurrentUser, VideoList }) => {
   return (
     <>
       {CurrentUser ? (
@@ -12,7 +12,7 @@ const WHLVideoList = ({ Page, CurrentUser, VideoList }) => {
             .map((m) => {
               return (
                 <>
-                  <ShowVideoList key={m._id} videoId={m.videoId} />
+                  <ShowVideoList CurrentUser={CurrentUser} Remover={Remover} key={m._id} videoId={m.videoId} />
                 </>
               );
             })}

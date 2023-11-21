@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: `https://youtube-clone-mug-de178feea9da.herokuapp.com/` });
+const API = axios.create({
+  baseURL: `https://youtube-clone-mug-de178feea9da.herokuapp.com/`,
+});
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("Profile"))
     req.headers.authorization = `Bearer ${
@@ -36,8 +38,10 @@ export const deleteWatchLater = (videoId, Viewer) =>
 export const addToHistory = (HistoryData) =>
   API.post(`/video/History`, HistoryData);
 export const getAllHistory = () => API.get("/video/getAllHistory");
+export const deleteHistory = (videoId, Viewer) =>
+  API.delete(`/video/deleteHistory/${videoId}/${Viewer}`);
 export const clearHistory = (userId) =>
-  API.delete(`/video/deleteHistory/${userId}`);
+  API.delete(`/video/deleteAllHistory/${userId}`);
 
 export const postComment = (CommentData) =>
   API.post(`/comment/post`, CommentData);

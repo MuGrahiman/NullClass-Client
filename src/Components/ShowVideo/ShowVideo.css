@@ -1,3 +1,7 @@
+.video_dot {
+  color: white;
+  float: right;
+}
 .video_ShowVideo {
   cursor: pointer;
   margin: 0.4rem;

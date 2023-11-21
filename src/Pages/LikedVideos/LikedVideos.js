@@ -1,13 +1,19 @@
+import React from "react";
+import WHL from "../../Components/WHL/WHL";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteLikeVideo } from "../../Actions/likedVideo";
 
-import React from 'react'
-import WHL from '../../Components/WHL/WHL';
-import { useSelector } from 'react-redux';
+function LikedVideos() {
+  const likedVideo = useSelector((state) => state.likeVideoReducer);
+  const dispatch = useDispatch();
+  const handleRemover = (videoId, Viewer) => {
+    console.log(videoId,Viewer)
 
-function LikedVideos() { 
-  const likedVideo = useSelector(state=>state.likeVideoReducer)
-return (
-    <WHL Page={"Liked Videos"} VideoList={likedVideo}/>
-  )
+    dispatch(deleteLikeVideo({ videoId, Viewer }));
+  };
+  return (
+    <WHL Page={"Liked Videos"} Remover={handleRemover} VideoList={likedVideo} />
+  );
 }
 
-export default LikedVideos
+export default LikedVideos;
