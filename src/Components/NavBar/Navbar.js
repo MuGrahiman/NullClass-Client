@@ -30,8 +30,10 @@ function Navbar({ toggleDrawer, setCreateEditChannelBtn }) {
   const dispatch = useDispatch();
 
   const onSuccess = (res) => {
+    console.log(res)
     const Email = res.profileObj.email;
-    dispatch(login({ email: Email }));
+    const Id = res.profileObj.googleId;
+    dispatch(login({ email: Email ,id:Id }));
   };
 
   const onFailure = (res) => {
