@@ -9,11 +9,13 @@ import LikedVideos from "../Pages/LikedVideos/LikedVideos";
 import VideoPage from "../Pages/VideoPage/VideoPage";
 import Channel from "../Pages/Channel/Channel";
 import Search from "../Pages/Search/Search";
+import Login from "../Pages/Login/Login";
 
 function AllRoutes({ setCreateEditChannelBtn, setVidUploadPage }) {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/library" element={<Library />} />
       <Route path="/history" element={<History />} />
       <Route path="/watchlater" element={<WatchLater />} />

@@ -5,40 +5,16 @@ import SearchBar from "../SearchBar/SearchBar";
 import { RiVideoAddLine } from "react-icons/ri";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { BiUserCircle } from "react-icons/bi";
-import { Link } from "react-router-dom";
-import GoogleLogin from "react-google-login";
-import { gapi } from "gapi-script";
+import { Link, useNavigate } from "react-router-dom";
+
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../Actions/auth";
 import Auth from "../../Pages/Auth/Auth";
 
 function Navbar({ toggleDrawer, setCreateEditChannelBtn }) {
   const [authBtn, setAuthBtn] = useState(false);
-  useEffect(() => {
-    const start = () => {
-      gapi.client.init({
-        clientId:
-          "43577689875-d79271sekk6rlup7n5k0est2ve74hv3v.apps.googleusercontent.com",
-        scope: "email",
-      });
-    };
-
-    gapi.load("client:auth2", start);
-  }, []);
+  const navigate = useNavigate();
 
   const CurrentUser = useSelector((state) => state.currentUserReducer);
-  const dispatch = useDispatch();
-
-  const onSuccess = (res) => {
-    console.log(res)
-    const Email = res.profileObj.email;
-    const Id = res.profileObj.googleId;
-    dispatch(login({ email: Email ,id:Id }));
-  };
-
-  const onFailure = (res) => {
-    console.log("Failed", res);
-  };
 
   return (
     <>
@@ -83,17 +59,10 @@ function Navbar({ toggleDrawer, setCreateEditChannelBtn }) {
             </>
           ) : (
             <>
-              <GoogleLogin
-                clientId="43577689875-d79271sekk6rlup7n5k0est2ve74hv3v.apps.googleusercontent.com"
-                onSuccess={onSuccess}
-                onFailure={onFailure}
-                render={(renderProps) => (
-                  <p className="Auth_Btn" onClick={renderProps.onClick}>
-                    <BiUserCircle size={22} />
-                    <b>Sign in</b>
-                  </p>
-                )}
-              />
+              <p className="Auth_Btn" onClick={()=>navigate('login')}>
+                <BiUserCircle size={22} />
+                <b>Sign in</b>
+              </p>
             </>
           )}
         </div>
