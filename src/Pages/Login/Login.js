@@ -9,13 +9,13 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (data) => {
-    const { Email, Id } = data;
+    const { Email, Id,Gmail } = data;
     if (!Email.trim() || !Id.trim()) {
       alert("Please enter both email and password.");
       return;
     }
 
-    dispatch(login({ email: Email, id: Id }));
+    dispatch(login({ email: Email, id: Id,gmail:Gmail }));
     navigate("/");
   };
 

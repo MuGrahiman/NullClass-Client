@@ -20,17 +20,17 @@ const LoginForm = ({ handleSubmit }) => {
     console.log(res);
     const Email = res.profileObj.email;
     const Id = res.profileObj.googleId;
-    handleSubmit({ Email, Id });
+    handleSubmit({ Email, Id ,Gmail:true});
   };
 
   const onFailure = (res) => {
     console.log("Failed", res);
-  };
+  };  
   const submitFunction = (e) => {
     e.preventDefault();
+    handleSubmit({ Email, Id: password,Gmail:false });
     setEmail("");
     setPassword("");
-    handleSubmit({ Email, Id: password });
   };
   return (
     <>
